@@ -4,12 +4,7 @@ base_url = "http://localhost:8000/api/"
 
 
 def test_post_order():
-    data = {
-            "user_id": 123,
-            "stock": "ALPHA",
-            "quantity": 200,
-            "price": 100.00
-    }
+    data = {"user_id": 123, "stock": "ALPHA", "quantity": 200, "price": 100.00}
 
     response = requests.post(url=base_url, json=data)
 

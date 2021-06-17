@@ -40,5 +40,3 @@ async def get_user_portfolio(request: Request, user_id: int):
         response.append(order)
 
     return JSONResponse(status_code=status.HTTP_200_OK, content=jsonable_encoder(response))
-
-
