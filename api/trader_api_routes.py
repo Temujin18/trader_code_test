@@ -21,7 +21,7 @@ def get_portfolio_by_user_id(collection, user_id: int):
 
 
 @router.post("/api/")
-async def create_file(request: Request, post_data: Order):
+async def post_order(request: Request, post_data: Order):
     mongo_collection = request.app.mongodb[Order.__collection_name__]
     data = post_data.dict()
     created_file = await mongo_collection.insert_one(data)
@@ -31,7 +31,7 @@ async def create_file(request: Request, post_data: Order):
 
 
 @router.get("/api/portfolio/{user_id}")
-async def get__file(request: Request, user_id: int):
+async def get_user_portfolio(request: Request, user_id: int):
     collection = request.app.mongodb[Order.__collection_name__]
     orders = get_portfolio_by_user_id(collection, user_id)
 
