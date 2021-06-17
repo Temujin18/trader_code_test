@@ -1,10 +1,12 @@
+from typing import List
+
 from pydantic import BaseModel
 
 
 class Order(BaseModel):
     __collection_name__ = "Order"
 
-    id: int
+    user_id: int
     stock: str
     quantity: int
     price: float
